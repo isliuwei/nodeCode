@@ -1,0 +1,4 @@
+Error - 
+ Error: ENOENT: no such file or directory, open 'ch01/not-found.txt'
+Warn - 
+ Error: ENOENT: no such file or directory, open 'ch01/not-found.txt'
