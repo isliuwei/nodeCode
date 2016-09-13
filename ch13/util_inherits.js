@@ -12,7 +12,8 @@ console.info();
 var util = require("util");
 console.log("util.inherits()方法实现原型继承。\n"
     +"语法:  util.inherits(constructor,superConstructor)  \n"
-    +"其中,第一个参数 constructor 用于定义继承的类对象(子类),第二个参数 superConstructor 参数用于定义被继承的类对象(父/基类)。\n");
+    +"其中,第一个参数 constructor 用于定义继承的类对象(子类),第二个参数 superConstructor 参数用于定义被继承的类对象(父/基类)。\n"
+    +"使用util.inherits()继承方法时,基类构造函数内部创建的属性和方法均不会被子类所继承,只有通过原型方法创建的属性和方法才会被子类所继承。");
 
 /**
  *      定义原型基类  Base
