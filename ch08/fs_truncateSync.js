@@ -31,3 +31,13 @@ var catFile = child.exec("cat txt/truncateSync.txt",(error,stdout,stderr)=>{
 
 console.info();
 console.info("----------    fs truncateSync    ----------");
+
+/**
+ *      fs.truncate()和fs.ftruncate()唯一的区别是: fs.truncate()和fs.truncateSync()这两个方法直接使用文件路径。
+ *      而fs.ftruncate()和fs.truncateSync()这两个方法需要使用文件描述符进行操作。(可能需要使用fs.open()配合使用)。
+ */
+
+
+
+
+
