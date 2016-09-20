@@ -1,0 +1,2 @@
+fs.appendFileSync(filename,data[,options])
+add filename 测试文本 to appendFileSync.txt
