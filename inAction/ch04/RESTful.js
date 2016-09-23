@@ -9,6 +9,7 @@ var items = [];
 
 var server = http.createServer(function(req,res){
     switch(req.method){
+        
         case 'POST':
             var item = "";
             req.setEncoding("utf8");
@@ -20,6 +21,7 @@ var server = http.createServer(function(req,res){
                 res.end("OK\n");
             });
             break;
+
         /*
         case 'GET':
             items.forEach(function(item,index,array){

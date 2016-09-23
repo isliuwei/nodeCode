@@ -21,10 +21,12 @@ var server = http.createServer(function(req,res){
 
     /*只要读入了新的数据块,就会触发data事件*/
     /*调用req.setEncoding(encoding)设置编码格式,将二进制数据转换成utf-8或ascii格式*/
-    req.setEncoding("utf8");
+    //req.setEncoding("utf8");
     req.on('data',function(chunk){
         /*数据块默认是个Buffer对象(字节数组)*/
-        console.log('parsed',chunk);
+        /*toString()默认为 utf-8 编码  chunk.toString() */
+        console.log('parsed buffer -->> ',chunk);
+        console.log('parsed buffer.toString() -->> utf-8',chunk.toString());
     });
 
     /*数据全部读完之后触发end事件*/
@@ -33,3 +35,6 @@ var server = http.createServer(function(req,res){
         res.end();
     });
 });
+
+server.listen(3000);
+console.log("Web Server is listening port 3000");
