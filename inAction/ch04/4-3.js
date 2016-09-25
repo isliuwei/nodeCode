@@ -11,9 +11,6 @@ var fs = require('fs');
 
 var root = __dirname;
 
-
-
-
 /*
 var options = {
     key: fs.readFileSync(keyPath),
