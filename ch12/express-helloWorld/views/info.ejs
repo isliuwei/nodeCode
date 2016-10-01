@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1>Express - Login userInfo</h1>
+        <blockquote>
+            <p><%= userName %></p>
+        </blockquote>
+        <blockquote>
+            <p><%= passWord %></p>
+        </blockquote>
+        <button id="btn-ajax" class="btn btn-success">Ajax get detail info</button>
+        <ul id="list" class="list-group">
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script>
+        $('#btn-ajax').on('click',function(){
+            $.get('/login/getData',function(res){
+                var html = "";
+                for(var p in res){
+                    html+='<li class="list-group-item">'+p+': '+res[p]+'</li>';
+                }
+                $('#list').html(html);
+
+            },'json');
+        });
+
+    </script>
+</body>
+</html>
