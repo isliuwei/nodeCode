@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css" />
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+</head>
+<body>
+    <div class="jumbotron">
+
+        <h1><%= title %></h1>
+        <p>Express stock photo application. <button class="btn btn-default"><a class="download-btn" href="/photos/upload"><i class="fa fa-upload"></i> Upload</a></button></p>
+
+        <div id="photos">
+            <% photos.forEach(function(photo){ %>
+                <div class="photo">
+                    <h2><%= photo.name %>  <a class="download-btn" href="/photos/<%= photo.id %>/download"><i class="fa fa-download"></i></a></h2>
+                    <img src="<%= photo.path %>" alt="<%= photo.name %>" />
+                </div>
+            <% }) %>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

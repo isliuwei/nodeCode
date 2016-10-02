@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var tpl = "";
-fs.readFile('demo.html','utf-8',function(err,data){
+fs.readFile('jade_view.html','utf-8',function(err,data){
 	tpl = data;
 });
 

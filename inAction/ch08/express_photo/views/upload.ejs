@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>upload page</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+
+            <form action="/photos/doupload" method="post" enctype="multipart/form-data" class="form-horizontal col-md-8 col-md-offset-2" role="form">
+                <h2>Express - Photo Upload</h2>
+                <p>Upload a photo to your account below.</p>
+                <br>
+                <!--<div class="form-group">-->
+                    <!--<label for="photoName" class="col-sm-2 control-label">photoName</label>-->
+                    <!--<div class="col-sm-6">-->
+                        <!--<input name="photoName" type="text" class="form-control" id="photoName" placeholder="photoName Here">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="form-group">
+                    <label for="photoImage" class="col-sm-2 control-label">photoImage</label>
+                    <div class="col-sm-6">
+                        <input name="photoImage" type="file" class="form-control" id="photoImage" placeholder="photoImage Here" multiple="multiple">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Upload</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
