@@ -1,0 +1,26 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "description": "movie nodejs demo",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "moment": "^2.15.1",
+    "mongoose": "^4.6.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "movie",
+    "nodejs",
+    "demo"
+  ],
+  "author": "isliuwei",
+  "license": "ISC"
+}
