@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn About Me</title>
+    <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Learn About Me</a>
+        </div>
+        <!--
+            如果用户已经登陆了则对导航条进行相应的改变。
+            一开始你的代码中并不存在currentUser，所以总会显示一个状态
+         -->
+        <ul class="nav navbar-nav navbar-right">
+            <% if (currentUser) { %>
+            <li>
+                <a href="/edit">
+                    Hello, <%= currentUser.name() %>
+                </a>
+            </li>
+            <li><a href="/users/logout">Log out</a></li>
+            <% } else { %>
+            <li><a href="/users/login">Log in</a></li>
+            <li><a href="/users/signup">Sign up</a></li>
+            <% } %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <% errors.forEach(function(error) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+    <% }) %>
+    <% infos.forEach(function(info) { %>
+    <div class="alert alert-info" role="alert">
+        <%= info %>
+    </div>
+    <% }) %>
+<!--
+    参考变量currentUser来判断你的登陆状态。不过现在它总会是false状态
+ -->
+<% if ((currentUser) && (currentUser.id === user.id)) { %>
+<a href="/edit" class="pull-right">Edit your profile</a>
+<% } %>
+<h1><%= user.name() %></h1>
+<h2>Joined on <%= user.createdAt %></h2>
+<% if (user.bio) { %>
+<p><%= user.bio %></p>
+<% } %>
+
+
+
+
+</div>
+</body>
+</html>

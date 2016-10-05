@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+    <ul>
+        <%
+            users.forEach(function(item,index,array){
+        %>
+            <li><%= item %></li>
+        <%
+            });
+        %>
+    </ul>
+
+</body>
+</html>

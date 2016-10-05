@@ -7,6 +7,12 @@ var logger = require('morgan');
 
 var app = new express();
 
+// 告诉Express你的视图存在于一个名为views的文件夹中
+app.set("views", path.resolve(__dirname, "views"));
+// 告诉Express你将使用EJS模板引擎
+app.set("view engine", "ejs");
+
+
 //输出有颜色区分的日志,以便于开发调试
 app.use(logger('dev'));
 
@@ -15,49 +21,10 @@ app.use(logger('dev'));
 var publicPath = path.resolve(__dirname, "public"); // 使用Node的path模块设置public的路径
 app.use(express.static(publicPath)); // 从publicPath目录发送静态文件
 
-//var EVIL_IP = "123.45.67.89";
-// req.ip
-/*
-var EVIL_IP = "::1";
-app.use(function(req, res, next) {
-    if (req.ip === EVIL_IP) {
-        res.status(401).send("Not allowed!");
-    } else {
-        next();
-    }
-});
-*/
 
 
 app.get('/',function(req,res){
-    res.writeHead(200,{'Content-Type':'text/html;charset=utf8'});
-    res.write(req.ip);
-    res.end("<h1>learnExpress</h1>");
-});
-
-
-/*扩展 request和response*/
-
-//response.redirect
-app.get('/redirect',function(req,res){
-    res.redirect('http://www.baidu.com');
-});
-
-
-//response.sendFile
-app.get('/download/:fileName',function(req,res){
-
-    var downloadPath = "";
-    var fileName = req.params.fileName;
-
-    if(fileName == ""){
-        downloadPath = publicPath+'/images/nodejs-green.png';  //    /Users/liuwei/Desktop/nodeCode/learnExpress/public/images/nodejs-green.png
-    }else{
-        downloadPath = publicPath+'/images/'+fileName;
-    }
-
-    res.sendFile(downloadPath);
-
+    res.render('index',{title: 'Express'});
 });
 
 
@@ -65,18 +32,10 @@ app.get('/download/:fileName',function(req,res){
 
 
 
-/*
-app.use(function(req,res){
-    if(req.url = '/redirect'){
-        res.writeHead(302,{'Location': 'http://www.baidu.com'});
-        console.log('redirect');
-        res.end('redirect');
-    }
 
-});
 
-http.createServer(app).listen(3000);
-*/
+
+
 
 
 app.use(function(req,res){

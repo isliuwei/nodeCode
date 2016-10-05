@@ -1,0 +1,20 @@
+{
+  "name": "middleware",
+  "version": "1.0.0",
+  "description": "express middleware demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "middleware"
+  ],
+  "author": "isliuwei",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  }
+}
