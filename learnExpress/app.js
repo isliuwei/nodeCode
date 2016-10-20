@@ -2,10 +2,15 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 
+
+
+
 //使用Morgan做日志记录中间件
 var logger = require('morgan');
 
 var app = new express();
+
+app.disable("x-powered-by");
 
 // 告诉Express你的视图存在于一个名为views的文件夹中
 app.set("views", path.resolve(__dirname, "views"));
